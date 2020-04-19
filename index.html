@@ -1,0 +1,348 @@
+<html>
+
+<head>
+    <title>Calculadora de Física - Cinemática Escalar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    #retangulo {
+        height: 100px;
+        width: 200px;
+        background: blue;
+    }
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <img src="https://www.colegiopectrus.com.br/images/logo.png" width="200">
+        <span class="navbar-brand mb-0 h1">Calculadora de Física - Cinemática Escalar</span>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <p>A cinemática estuda o movimento dos corpos, indicando o deslocamento, a velocidade e a aceleração em cada instante. Porém, neste ramo da Física, não são consideradas a massa dos corpos nem as forças que são aplicadas sobre eles.</p>
+            </div>
+        </div>
+        <hr>
+        <h2>Deslocamento Escalar</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>O deslocamento escalar é dado pela fórmula: ΔS = S - S<sub>0</sub> </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="posicaoFinal">S - posição final</label>
+                    <input type="number" class="form-control" id="posicaoFinal">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="posicaoInicial">S<sub>0</sub> - posição de inicial </label>
+                    <input type="number" class="form-control" id="posicaoInicial">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaDeslocamento()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="deslocamentoEscalar">ΔS - Deslocamento escalar</label>
+                <input type="number" class="form-control" id="deslocamentoEscalar">
+            </div>
+        </div>
+        <hr>
+        <h2>Velocidade escalar média</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>A velocidade escalar média é dada pela fórmula: V<sub>m</sub> = ΔS / Δt, onde ΔS = deslocamento escalar e Δt = variação do tempo </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="deslocamentoEscalarVelocidade">ΔS - Deslocamento escalar</label>
+                    <input type="number" class="form-control" id="deslocamentoEscalarVelocidade">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="variacaoTempoVelocidade">Δt - Variação do tempo</label>
+                    <input type="number" class="form-control" id="variacaoTempoVelocidade">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaVelocidadeEscalar()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="velocidadeMedia">V<sub>m</sub> - Velocidade escalar média</label>
+                <input type="number" class="form-control" id="velocidadeMedia">
+            </div>
+        </div>
+        <hr>
+        <h2>Aceleração escalar média</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>A aceleração escalar média é dada pela fórmula: a = ΔV / Δt, onde ΔV = variação média da velocidade e Δt = variação do tempo </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="aceleracaoVelocidade">ΔV - Variação média da velocidade</label>
+                    <input type="number" class="form-control" id="aceleracaoVelocidade">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="aceleracaoTempo">Δt - Variação do tempo</label>
+                    <input type="number" class="form-control" id="aceleracaoTempo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaAceleracaoEscalar()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="aceleracaoMedia">a - Aceleração escalar média</label>
+                <input type="number" class="form-control" id="aceleracaoMedia">
+            </div>
+        </div>
+        <hr>
+        <h2>Função horária da posição no Movimento Retilíneo Uniforme</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Função horária da posição no Movimento Retilíneo Uniforme pela fórmula: S(t) = S<sub>0</sub> + v . t, onde S(t) = S<sub>0</sub> é a posição inicial, v a velocidade média e t o tempo </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="mruPosicaoIncial">S<sub>0</sub> - posição inicial</label>
+                    <input type="number" class="form-control" id="mruPosicaoIncial">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruVelocidade">v - velocidade</label>
+                    <input type="number" class="form-control" id="mruVelocidade">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruTempo">t - tempo</label>
+                    <input type="number" class="form-control" id="mruTempo">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaFuncaoHorariaPosicao()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="mruPosicaoFinal">Função horária da posição no MRU</label>
+                <input type="number" class="form-control" id="mruPosicaoFinal">
+            </div>
+        </div>
+        <hr>
+        <h2>Função horária da posição no Movimento Retilíneo Uniformemente Variado (MRUV)</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Função horária da posição no Movimento Retilíneo Uniformemente Variado pela fórmula: S(t) = S<sub>0</sub> + v<sub>0</sub> . t + ( a.t <sup>2</sup>/ 2), onde S(t) = S<sub>0</sub> é a posição inicial, v<sub>0</sub> a velocidade inicial, t o tempo e a a aceleração </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="mruvPosicaoIncial">S<sub>0</sub> - posição inicial</label>
+                    <input type="number" class="form-control" id="mruvPosicaoIncial">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruvVelocidade">v - velocidade</label>
+                    <input type="number" class="form-control" id="mruvVelocidade">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruvTempo">t - tempo</label>
+                    <input type="number" class="form-control" id="mruvTempo">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruvAceleracao">a - aceleração</label>
+                    <input type="number" class="form-control" id="mruvAceleracao">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaFuncaoHorariaPosicaoMruv()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="mruvPosicaoFinal">Função horária da posição no MRUV</label>
+                <input type="number" class="form-control" id="mruvPosicaoFinal">
+            </div>
+        </div>
+        <hr>
+        <h2>Função horária da Velocidade no Movimento Retilíneo Uniformemente Variado (MRUV)</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Função horária da velocidade no Movimento Retilíneo Uniformemente Variado pela fórmula: V(t) = V<sub>0</sub> + a . t, onde V<sub>0</sub> é a velocidade inicial, t o tempo e a a aceleração </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="mruvVelocidadeInicial">V<sub>0</sub> - velocidade inicial</label>
+                    <input type="number" class="form-control" id="mruvVelocidadeInicial">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruvTempoVelocidade">t - tempo</label>
+                    <input type="number" class="form-control" id="mruvTempoVelocidade">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="mruvAceleracaoVelocidade">a - aceleração</label>
+                    <input type="number" class="form-control" id="mruvAceleracaoVelocidade">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaFuncaoHorariaVelocidadeMruv()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="mruvVelocidadeFinal">Função horária da velocidade no MRUV</label>
+                <input type="number" class="form-control" id="mruvVelocidadeFinal">
+            </div>
+        </div>
+        <hr>
+        <h2>Equação de Torricelli</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Equação de Torricelli é dada pela fórmula: V<sup>2</sup> = V<sub>0</sub><sup>2</sup> + 2 . a . ΔS, onde V<sub>0</sub> é a velocidade inicial, a aceleração e o ΔS a variação da posição </p>
+            </div>
+        </div>
+        <form>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <label for="torricelliVelocidadeInicial">V<sub>0</sub> - velocidade inicial</label>
+                    <input type="number" class="form-control" id="torricelliVelocidadeInicial">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="torricelliAceleracao">a - aceleração</label>
+                    <input type="number" class="form-control" id="torricelliAceleracao">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="torricelliPosicao">ΔS - Variação da posição</label>
+                    <input type="number" class="form-control" id="torricelliPosicao">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
+                    <button type="button" class="btn btn-primary" onclick="CalculaTorricelli()">Calcular</button>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="torricelliVelocidade">Velocidade</label>
+                <input type="number" class="form-control" id="torricelliVelocidade">
+            </div>
+        </div>
+    </div>
+    <script>
+        function CalculaDeslocamento() {
+            var posicaoFinal = document.getElementById("posicaoFinal").value;
+            var posicaoInicial = document.getElementById("posicaoInicial").value;
+
+            var deslocamentoEscalar = posicaoFinal - posicaoInicial;
+
+            var deslocamentoEscalarTemp = document.getElementById("deslocamentoEscalar");
+            deslocamentoEscalarTemp.value = deslocamentoEscalar;
+
+        }
+
+        function CalculaVelocidadeEscalar() {
+            var deslocamentoEscalarVelocidade = document.getElementById("deslocamentoEscalarVelocidade").value;
+            var variacaoTempoVelocidade = document.getElementById("variacaoTempoVelocidade").value;
+
+            var velocidadeMedia = deslocamentoEscalarVelocidade / variacaoTempoVelocidade;
+
+            var velocidadeMediaTemp = document.getElementById("velocidadeMedia");
+            velocidadeMediaTemp.value = velocidadeMedia;
+
+        }
+
+        function CalculaAceleracaoEscalar() {
+            var aceleracaoVelocidade = document.getElementById("aceleracaoVelocidade").value;
+            var aceleracaoTempo = document.getElementById("aceleracaoTempo").value;
+
+            var aceleracaoMedia = aceleracaoVelocidade / aceleracaoTempo;
+
+            var aceleracaoMediaTemp = document.getElementById("aceleracaoMedia");
+            aceleracaoMediaTemp.value = aceleracaoMedia;
+
+        }
+
+        function CalculaFuncaoHorariaPosicao() {
+            var mruPosicaoIncial = document.getElementById("mruPosicaoIncial").value;
+            var mruVelocidade = document.getElementById("mruVelocidade").value;
+            var mruTempo = document.getElementById("mruTempo").value;
+
+
+            var mruPosicaoFinal = mruPosicaoIncial + (mruVelocidade * mruTempo);
+
+            var mruPosicaoFinalTemp = document.getElementById("mruPosicaoFinal");
+            mruPosicaoFinalTemp.value = mruPosicaoFinal;
+
+        }
+
+        function CalculaFuncaoHorariaPosicaoMruv() {
+            var mruvPosicaoIncial = document.getElementById("mruvPosicaoIncial").value;
+            var mruvVelocidade = document.getElementById("mruvVelocidade").value;
+            var mruvTempo = document.getElementById("mruvTempo").value;
+            var mruvAceleracao = document.getElementById("mruvAceleracao").value;
+
+
+            var mruvPosicaoFinal = mruvPosicaoIncial + (mruvVelocidade * mruvTempo) + ((mruvAceleracao * Math.pow(mruvTempo,2)) / 2 );
+
+            var mruvPosicaoFinalTemp = document.getElementById("mruvPosicaoFinal");
+            mruvPosicaoFinalTemp.value = mruvPosicaoFinal;
+
+        }
+
+        function CalculaFuncaoHorariaVelocidadeMruv() {
+            var mruvVelocidadeInicial = document.getElementById("mruvVelocidadeInicial").value;
+            var mruvTempoVelocidade = document.getElementById("mruvTempoVelocidade").value;
+            var mruvAceleracaoVelocidade = document.getElementById("mruvAceleracaoVelocidade").value;
+
+            var mruvVelocidadeFinal = mruvVelocidadeInicial + (mruvTempoVelocidade * mruvAceleracaoVelocidade);
+
+            var mruvVelocidadeFinalTemp = document.getElementById("mruvVelocidadeFinal");
+            mruvVelocidadeFinalTemp.value = mruvVelocidadeFinal;
+
+        }
+
+        function CalculaTorricelli() {
+            var torricelliVelocidadeInicial = document.getElementById("torricelliVelocidadeInicial").value;
+            var torricelliAceleracao = document.getElementById("torricelliAceleracao").value;
+            var torricelliPosicao = document.getElementById("torricelliPosicao").value;
+
+            var torricelliVelocidade = Math.sqrt(Math.pow(torricelliVelocidadeInicial, 2) + (2 * torricelliAceleracao * torricelliPosicao));
+
+            var torricelliVelocidadeTemp = document.getElementById("torricelliVelocidade");
+            torricelliVelocidadeTemp.value = torricelliVelocidade;
+
+        }
+
+    </script>
+</body>
+
+</html>
